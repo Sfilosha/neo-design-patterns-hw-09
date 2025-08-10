@@ -25,7 +25,7 @@ export class XmlExporter extends DataExporter {
   }
 
   protected save(): void {
-    const filePath = "output/users.xml";
+    const filePath = "dist/users.xml";
     const dir = dirname(filePath);
 
     if (!existsSync(dir)) {
