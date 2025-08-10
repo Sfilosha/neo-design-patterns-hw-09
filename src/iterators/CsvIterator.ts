@@ -7,7 +7,7 @@ export class CsvIterator implements Iterable<UserData> {
   constructor(filePath: string) {
     const file = readFileSync(filePath, "utf-8");
     const lines = file.trim().split("\n");
-    const [, ...dataLines] = lines; // skip header
+    const [, ...dataLines] = lines;
 
     this.users = dataLines.map(line => {
       const [idStr, name, email, phone] = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(s => s.replace(/(^"|"$)/g, ''));
